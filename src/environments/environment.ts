@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  BASE_URL_MS_CLIENT: 'http://localhost:8090',
+  BASE_URL_MS_MACHINE: 'http://localhost:8091',
+  BASE_URL_MS_OPERATION: 'http://localhost:8092', 
+
+ // BASE_URL_MS_CLIENT: 'http://172.27.72.19:8090',
+  //BASE_URL_MS_MACHINE: 'http://172.27.72.19:8091',
+  //BASE_URL_MS_OPERATION: 'http://172.27.72.19:8092',
 };
 
 /*

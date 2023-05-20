@@ -1,0 +1,33 @@
+#file {
+ display: none;
+}
+
+.file-style {
+ font-family: 'Trebuchet MS';
+ width: 400px;
+ display: block;
+ background-color: #f5f4f4;
+ margin: auto;
+ cursor: pointer;
+ text-align: center;
+ padding: 20px;
+ border-radius: 15px;
+ border: 2px dashed #cdc8c8;
+}
+
+.file-style:hover {
+ background-color: rgba(177, 229, 250, 0.623);
+}
+
+
+.alert{
+ width: 400px;
+ display: block;
+ background-color: #f5bebe98;
+ margin: auto;
+ cursor: pointer;
+ text-align: center;
+ padding: 20px;
+ border-radius: 15px;
+ border: 2px solid #f09494;
+}

@@ -1,0 +1,30 @@
+<h1 mat-dialog-title (click)="onNoClick()" class="d-flex"><button mat-button>
+        <mat-icon>close</mat-icon>
+    </button></h1>
+
+<form [formGroup]="form" (submit)="createBrand()">
+
+    <div class="form-group">
+        <label for="nameBrand">Enter Brand Name:</label>
+
+        <input type="text" class="form-control" name="brand" formControlName="nameBrand" placeholder="Enter brand name">
+
+        <div *ngIf="f.nameBrand.touched && f.nameBrand.invalid" class="alert alert-danger mt-1">
+
+            <div *ngIf="f.nameBrand.errors.required">brand name is required.</div>
+            <div *ngIf="f.nameBrand.errors.minlength">brand name should be more than 2 characters.</div>
+
+            <div *ngIf="f.nameBrand.errors.maxlength">brand name should be less than 60 characters.</div>
+
+
+        </div>
+    </div>
+
+
+    <div class="modal-footer">
+        <button mat-raised-button type="submit" [disabled]="!form.valid  || (processing)" class="mt-5"
+            color="secondary">Create</button> 
+
+    </div>
+
+</form>

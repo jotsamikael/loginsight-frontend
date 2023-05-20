@@ -1,0 +1,57 @@
+
+
+.sidebar-nav {
+  width: 220px;
+  background-color: #18407c;
+  background: #18407c;
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+}
+.sidebar-link .right-icon {
+  display: inline-flex;
+}
+.sidebar-link[aria-expanded="true"] .right-icon {
+  transform: rotate(180deg);
+}
+@media (min-width: 992px) {
+  
+  .whole {
+    overflow: auto !important;
+  }
+  main {
+    margin-left: 250px;
+  }
+  /* this is to remove the backdrop */
+  .offcanvas-backdrop::before {
+    display: none;
+  }
+  .sidebar-nav {
+    -webkit-transform: none;
+    transform: none;
+    visibility: visible !important;
+    height: calc(100% - 8%);
+    top: 56px;
+  }
+}
+
+.content{
+  padding-top: 6%;
+  
+}
+
+
+.dropdown-menu {
+ 
+  padding: 1px;
+  background-color: lightblue;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: dodgerblue;
+}

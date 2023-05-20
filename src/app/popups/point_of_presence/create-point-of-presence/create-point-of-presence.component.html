@@ -1,0 +1,48 @@
+<h1 mat-dialog-title (click)="onNoClick()" class="d-flex"><button mat-button>
+        <mat-icon>close</mat-icon>
+    </button></h1>
+
+<form [formGroup]="form" (submit)="createPointOfPresence()">
+
+    <div class="form-group">
+        <label for="region">Choose region:</label>
+
+        <select name="region" class="form-control" formControlName="region">
+
+            <option *ngFor="let region of regionList" [value]='region.idRegion' selected="selected">
+                {{region.nameRegion | uppercase}}</option> 
+
+        </select>
+        <div *ngIf="f.region.touched && f.region.invalid" class="alert alert-danger mt-1">
+
+            <div *ngIf="f.region.errors.required">Region is required.</div>
+        </div>
+
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="town">Enter Town Name:</label>
+    
+        <input type="text" class="form-control" name="town" formControlName="town" placeholder="Enter town name">
+    
+        <div *ngIf="f.town.touched && f.town.invalid" class="alert alert-danger mt-1">
+    
+            <div *ngIf="f.town.errors.required">Town name is required.</div>
+            <div *ngIf="f.town.errors.minlength">Town name should be more than 2 characters.</div>
+    
+            <div *ngIf="f.town.errors.maxlength">Town name should be less than 60 characters.</div>
+    
+    
+        </div>
+    </div>
+
+
+    <div class="modal-footer">
+        <button mat-raised-button type="submit" [mat-dialog-close] [disabled]="!form.valid  || (processing)" class="mt-5"
+            color="secondary">Create</button>
+
+    </div>
+
+</form>

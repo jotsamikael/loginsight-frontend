@@ -1,0 +1,98 @@
+<h1 mat-dialog-title (click)="onNoClick()" style="align-items:flex-end;"><button mat-button>
+        <mat-icon>close</mat-icon>
+    </button></h1>
+
+    <form [formGroup]="form" (submit)="updateBranch()">
+    
+    
+        <div class="form-group">
+            <label for="nameBranch">Enter Branch Name:</label>
+    
+            <input type="text" class="form-control" name="nameBranch" formControlName="nameBranch"
+                placeholder={{data.element.nameBranch}}>
+    
+            <div *ngIf="f.nameBranch.touched && f.nameBranch.invalid" class="alert alert-danger mt-1">
+    
+                <div *ngIf="f.nameBranch.errors.required">Branch name is required.</div>
+                <div *ngIf="f.nameBranch.errors.minlength">Branch name should be more than 2 characters.</div>
+    
+                <div *ngIf="f.nameBranch.errors.maxlength">Branch name should be less than 60 characters.</div>
+    
+    
+            </div>
+        </div>
+    
+    
+        <div class="form-group">
+            <label for="pointOfPresence">Choose point of presence:</label>
+        
+            <select name="pointOfPresence" class="form-control" formControlName="pointOfPresence">
+        
+                <option *ngFor="let point of pointList" [value]='point.idPointOfPresence' selected="selected">
+                    {{point.town | uppercase}}</option>
+        
+            </select>
+            <div *ngIf="f.pointOfPresence.touched && f.pointOfPresence.invalid" class="alert alert-danger mt-1">
+        
+                <div *ngIf="f.pointOfPresence.errors.required">Point of presence is required.</div>
+            </div>
+        
+        
+        </div>
+    
+    
+        <div class="form-group">
+            <label for="town">Enter Longitude:</label>
+    
+            <input type="number" class="form-control" name="town" formControlName="yCoor" placeholder={{data.element.yCoor}}>
+    
+            <div *ngIf="f.yCoor.touched && f.yCoor.invalid" class="alert alert-danger mt-1">
+    
+                <div *ngIf="f.yCoor.errors.required">Longitude is required.</div>
+    
+    
+    
+            </div>
+        </div>
+    
+    
+    
+        <div class="form-group">
+            <label for="town">Enter Latitude:</label>
+    
+            <input type="number" class="form-control" name="town" formControlName="xCoor" placeholder={{data.element.xCoor}}>
+    
+            <div *ngIf="f.xCoor.touched && f.xCoor.invalid" class="alert alert-danger mt-1">
+    
+                <div *ngIf="f.xCoor.errors.required">Latitude is required.</div>
+               
+    
+    
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="partner">Choose partner:</label>
+    
+            <select name="partner" class="form-control" formControlName="partner">
+    
+                <option *ngFor="let partner of partnerList" [value]='partner.idPartner' selected="selected">
+                    {{partner.namePartner | uppercase}}</option>
+    
+            </select>
+            <div *ngIf="f.partner.touched && f.partner.invalid" class="alert alert-danger mt-1">
+    
+                <div *ngIf="f.partner.errors.required">Partner is required.</div>
+            </div>
+    
+    
+        </div>
+    
+    
+        <div class="modal-footer">
+            <button mat-raised-button [mat-dialog-close] type="submit" [disabled]="!form.valid  || (processing)"
+                class="mt-5" color="secondary">Update</button>
+        
+        </div>
+    
+    </form> 

@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+
+:root {
+    --color-body: #2d3233;
+    --color-heading: #e9a20a;
+    --color-base: #030847;
+    --color-base2: #f6f9fd;
+    --color-brand: #e9a20a;
+    --color-brand2: #e9a20a;
+    --sidbar-width: 200px;
+    --font-base: "Bai Jamjuree";
+}
+
+*{
+ font-family: var(--font-base), sans-serif;
+   
+}
+body {
+    background-color: var(--color-base2);
+    color: var(--color-body);
+    font-family: var(--font-base), sans-serif;
+}
+
+h1,h2,h3,h4,h5 {
+    color: var(--color-heading);
+    font-weight: 700;
+}

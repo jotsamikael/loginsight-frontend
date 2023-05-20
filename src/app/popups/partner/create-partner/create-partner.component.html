@@ -1,0 +1,30 @@
+<h1 mat-dialog-title (click)="onNoClick()" class="text-left"><button mat-button><mat-icon>close</mat-icon></button></h1>
+
+<form [formGroup]="form" (submit)="createPartner()">
+
+
+    <div class="form-group">
+        <label for="namePartner">Enter partner name:</label>
+
+        <input type="text" class="form-control" name="namePartner" formControlName="namePartner"
+            placeholder="Enter partner name">
+
+        <div *ngIf="f.namePartner.touched && f.namePartner.invalid" class="alert alert-danger mt-1">
+
+            <div *ngIf="f.namePartner.errors.required">Partner name is required.</div>
+            <div *ngIf="f.namePartner.errors.minlength">Partner name should be more than 2 characters.</div>
+
+            <div *ngIf="f.namePartner.errors.maxlength">Partner name should be less than 60 characters.</div>
+
+
+        </div>
+    </div>
+
+
+    <div class="modal-footer">
+        <button mat-raised-button [mat-dialog-close] type="submit" [disabled]="!form.valid  || (processing)" class="mt-5"
+            color="secondary">Create</button>
+
+    </div>
+
+</form>

@@ -1,0 +1,205 @@
+
+<div class="whole">
+
+
+ <!-- NAVBAR  START-->
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top"  style="background-color: #031838;"> 
+    <div class="container-fluid">
+        <!-- sidebar trigger start -->
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+            aria-controls="offcanvasExample">
+            <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+        </button>
+        <!-- sidebar trigger end -->
+        <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="#">
+            <img src="../../../assets/images/logo_small.png"  height="60px" alt="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar"
+            aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <form class="d-flex ms-auto my-3 my-lg-0">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </form>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa fa-user-circle"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item btn" href="#">Action</a></li>
+                        <li>
+                            <a class="dropdown-item btn" (click)="logout()" > <i class="fa fa-sign-out"></i> Se deconneter</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- NAVBAR  END-->
+
+<!-- OFFCANVAS START -->
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-start sidebar-nav" tabindex="-1" id="sidebar" style="background-color: #031838;">
+    <div class="offcanvas-body p-0">
+        <nav class="navbar-dark">
+            <ul class="navbar-nav mt-3">
+                <li>
+                    <div class="text-muted small fw-bold text-uppercase px-3">
+                        <span class="me-2"><i class="fa fa-dashboard"></i></span>RESUME
+                    </div>
+                </li>
+                <li>
+                    <a routerLink="profile" class="nav-link px-3 active">
+                      
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="my-2">
+                    <hr class="dropdown-divider bg-light" />
+                </li>
+                <li>
+                    <div class="text-muted small fw-bold text-uppercase px-3 mb-2">
+                        <span class="me-2"><i class="fa fa-book"></i></span>REPORTS
+                    </div>
+                </li>
+                <li>
+                    <a routerLink="/h22-report" class="nav-link px-3">
+                          
+                        <span>H22</span>
+                    </a>
+                </li>
+               
+                <li>
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#more">
+                        <span class="me-2"><i class="fa fa-database"></i></span>
+                        <span>More</span>
+                        <span class="ms-auto">
+                            <span class="right-icon">
+                                <i class="fa fa-chevron-down"></i>
+                            </span>
+                        </span>
+                    </a>
+                    <div class="collapse" id="more">
+                        <ul class="navbar-nav ps-3">
+                            <li>
+                                <a href="#" class="nav-link px-3">
+                                    <span class="me-2"><i class="fa fa-dashboard"></i></span>
+                                    <span>Coming soon...</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+               
+                <li class="my-2">
+                    <hr class="dropdown-divider bg-light" />
+                </li>
+                <li>
+                    <div class="text-muted small fw-bold text-uppercase px-3 mb-2">
+                    <span class="me-2"><i class="fa fa-cloud-upload"></i></span>  EXTRACT & LOAD
+                    </div>
+                </li>
+                <li>
+                    <a routerLink="/extraction" class="nav-link px-3">
+                        
+                        <span>Extraction</span>
+                    </a>
+                </li>
+                <li class="my-2">
+                    <hr class="dropdown-divider bg-light" />
+                </li>
+               
+            
+                <li>
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#terminal">
+                        <span class="me-2"><i class="fa fa-server"></i></span>
+                        <span>Terminal Management</span>
+                        <span class="ms-auto">
+                            <span class="right-icon">
+                                <i class="fa fa-chevron-down"></i>
+                            </span>
+                        </span>
+                    </a>
+                    <div class="collapse" id="terminal">
+                        <ul class="navbar-nav ps-3">
+                            <li>
+                                <a href="#" class="nav-link px-3">
+                                    <span class="me-2"><i class="fa fa-database"></i></span>
+                                    <span>Terminal</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-3">
+                                    <span class="me-2"><i class="fa fa-imdb"></i></span>
+                                    <span>Brand</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-3">
+                                    <span class="me-2"><i class="fa fa-arows"></i></span>
+                                    <span>Model</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-3">
+                                    <span class="me-2"><i class="fa fa-align-center"></i></span>
+                                    <span>Type</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="my-2">
+                    <hr class="dropdown-divider bg-light" />
+                </li>
+
+              
+                
+                <li>
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#client">
+                        <span class="me-2"><i class="fa fa-university"></i></span>
+                        <span>Client Management</span>
+                        <span class="ms-auto">
+                            <span class="right-icon">
+                                <i class="fa fa-chevron-down"></i>
+                            </span>
+                        </span>
+                    </a>
+                    <div class="collapse" id="client">
+                        <ul class="navbar-nav ps-3">
+                            <li>
+                                <a routerLink="/partner" class="nav-link px-3">
+                                    <span class="me-2"><i class="fa fa-handshake-o"></i></span>
+                                    <span>Partner</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+             
+            </ul>
+        </nav>
+    </div>
+</div>
+<!-- offcanvas -->
+<!-- OFFCANVAS END -->
+
+<!-- content -->
+<main class="content">
+     
+    <router-outlet></router-outlet>
+
+</main>
+
+</div>
