@@ -67,9 +67,23 @@ export class PartnerComponent implements OnInit {
   closeResult = '';
   modalPartner: any;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
 
- 
+    console.log("read")
+   }
+
+
+
+
+  refreshData() {
+    
+   
+    
+  }
+
+
+
+
 
   ngAfterViewInit(): void {
 
@@ -168,7 +182,7 @@ export class PartnerComponent implements OnInit {
 
   openCreatePartner() {
    
-    this.commonService.openCreateModal(CreatePartnerComponent, '300px', '500px')
+    this.commonService.openCreateModal(CreatePartnerComponent, '300px', '500px', this.ngOnInit)
     
 
 
@@ -183,7 +197,7 @@ export class PartnerComponent implements OnInit {
 
   openCreateBranch() {
 
-    this.commonService.openCreateModal(CreateBranchComponent, '520px', '500px')
+    this.commonService.openCreateModal(CreateBranchComponent, '520px', '500px', this.ngOnInit)
    
 
   }
@@ -198,7 +212,7 @@ export class PartnerComponent implements OnInit {
 
   openCreatePoint() {
    
-    this.commonService.openCreateModal(CreatePointOfPresenceComponent, '350px', '500px')
+    this.commonService.openCreateModal(CreatePointOfPresenceComponent, '350px', '500px', this.ngOnInit)
    
   }
 

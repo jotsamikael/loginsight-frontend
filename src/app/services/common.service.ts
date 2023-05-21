@@ -38,12 +38,15 @@ export class CommonService {
 
   
 
-  openCreateModal(givenComponent, modalHeight, modalWidth) {
+  openCreateModal(givenComponent, modalHeight, modalWidth, callback) {
     const dialogRef = this.dialog.open(givenComponent, { height: modalHeight, width: modalWidth });
     dialogRef.afterClosed().subscribe(result => {
       //refresh data
-     this.refreshData();
-      console.log('The dialog was closed');
+      
+     
+        this.refreshData()
+ 
+      
     });
   }
 
@@ -52,7 +55,12 @@ export class CommonService {
     const dialogRef = this.dialog.open(givenComponent, { height: modalHeight, width: modalWidth, data: { element: modalElement } });
     dialogRef.afterClosed().subscribe(result => {
       //refresh data
-      //this.refreshData();
+
+      setTimeout(() => {
+        this.refreshData();
+      }, 3000);
+     
+      
     });
 
   }

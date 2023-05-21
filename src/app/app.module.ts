@@ -80,7 +80,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     SidebarDashboardComponent,
     H22ReportComponent,
-    DashboardComponent
+    DashboardComponent,
+    
   ],
   imports: [
 
