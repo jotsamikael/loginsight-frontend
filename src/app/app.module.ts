@@ -74,6 +74,9 @@ import { UpdateTerminalTypeComponent } from './popups/TerminalType/update-termin
 import { RouterModule } from '@angular/router';
 import { SidebarDashboardComponent } from './sidebar-dashboard/sidebar-dashboard.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatTableExporterModule } from 'mat-table-exporter';
+import { SettingsComponent } from './settings/settings.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +84,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SidebarDashboardComponent,
     H22ReportComponent,
     DashboardComponent,
+    ProfileComponent,
+    SettingsComponent
     
   ],
   imports: [
@@ -131,6 +136,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    MatTableExporterModule,
 
     ReactiveFormsModule,
   ],

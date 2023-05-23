@@ -51,7 +51,7 @@
                         <i class="fa fa-user-circle"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item btn" href="#">Profile</a></li>
+                        <li><a class="dropdown-item btn" routerLink="/profile">Profile</a></li>
                         <li>
                             <a class="dropdown-item btn" (click)="logout()" > <i class="fa fa-sign-out"></i>Logout</a>
                         </li>
@@ -75,7 +75,7 @@
                     </div>
                 </li>
                 <li>
-                    <a routerLink="profile" class="nav-link px-3 active">
+                    <a routerLink="/dashboard" class="nav-link px-3 active">
                       
                         <span>Dashboard</span>
                     </a>
@@ -202,6 +202,15 @@
                             </li>
                         </ul>
                     </div>
+                </li>
+                <li class="my-2">
+                    <hr class="dropdown-divider bg-light" />
+                </li>
+                <li>
+                    <a routerLink="/settings" class="nav-link px-3">
+                
+                        <span><i class="fa fa-gear"></i> Settings</span>
+                    </a>
                 </li>
              
             </ul>

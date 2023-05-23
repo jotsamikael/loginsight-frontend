@@ -67,6 +67,19 @@ export class CommonService {
 
   /****************************************************************/
 
-
+   getNamePartnerFromIdPartner(id: number, listOfObjects): string {
+  // loop over the listOfObjects array
+    for (let i = 0; i < listOfObjects.length; i++) {
+    // get the current element
+      let currentElement = listOfObjects[i];
+    // check if the idPartner property matches the parameter
+      if (currentElement.idPartner === id) {
+      // return the namePartner property
+        return currentElement.namePartner;
+    }
+  }
+  // if no match is found, return null or an empty string
+  return null;
+}
 
 }

@@ -134,6 +134,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
         CreatePointOfPresenceComponent,
         UpdatePointOfPresenceComponent,
         DetailsPointOfPresenceComponent,
+        
     ],
     exports: [ ]
 })

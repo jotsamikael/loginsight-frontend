@@ -4,6 +4,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExtractionComponent } from './extraction/extraction.component';
 import { H22ReportComponent } from './h22-report/h22-report.component';
 import { PartnerComponent } from './partner/partner.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SettingsComponent } from './settings/settings.component';
 import { TerminalBrandComponent } from './terminal-brand/terminal-brand.component';
 import { TerminalModelComponent } from './terminal-model/terminal-model.component';
 import { TerminalTypeComponent } from './terminal-type/terminal-type.component';
@@ -58,6 +60,16 @@ const routes: Routes = [
   {
     path: 'terminal-brand',
     component: TerminalBrandComponent,
+
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent,
+
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
 
   },
 ];

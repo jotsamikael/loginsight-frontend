@@ -8,7 +8,7 @@
                 <div class="col-md-3 col-sm-3">
                     <mat-card>
                         <mat-card-title-group>
-                            <mat-card-title>1523M
+                            <mat-card-title>{{this.numberOfOperation}}
                             </mat-card-title>
                             <mat-card-subtitle>Operations</mat-card-subtitle>
                             <i class="fa fa-line-chart fa-3x" aria-hidden="true"></i>
@@ -25,7 +25,7 @@
                 <div class="col-md-3 col-sm-3">
                     <mat-card>
                         <mat-card-title-group>
-                            <mat-card-title>14%</mat-card-title>
+                            <mat-card-title>{{this.tauxDeRejet}}%</mat-card-title>
                             <mat-card-subtitle>Taux de rejet</mat-card-subtitle>
                             <i class="fa fa-reply-all fa-3x" aria-hidden="true"></i>
                         </mat-card-title-group>
@@ -42,7 +42,7 @@
                 <div class="col-md-3 col-sm-3">
                     <mat-card>
                         <mat-card-title-group>
-                            <mat-card-title>310M</mat-card-title>
+                            <mat-card-title>{{this.montantRetrait}}</mat-card-title>
                             <mat-card-subtitle>Montant de retrait</mat-card-subtitle>
                             <i class="fa fa-credit-card fa-3x" aria-hidden="true"></i>
                         </mat-card-title-group>
@@ -59,7 +59,7 @@
                 <div class="col-md-3 col-sm-3">
                     <mat-card>
                         <mat-card-title-group>
-                            <mat-card-title>33k
+                            <mat-card-title>{{this.montantVersement}}
                             </mat-card-title>
                             <mat-card-subtitle>Montant de versement</mat-card-subtitle>
                             <i class="fa fa-area-chart fa-3x" aria-hidden="true"></i>
@@ -170,6 +170,158 @@
         </mat-card>
     </div>
 
+
+
+
+    <!-- REPORT TABLE -->
+
+    <div class="row mt-5">
+    
+        
+            <mat-card>
+                <mat-card-subtitle>Operations report</mat-card-subtitle>
+    
+    
+    
+                <div class="row justify-content-start">
+                    <div class="col-md-8 col-xl-8">
+                        <mat-form-field>
+                            <input matInput class="search-form-field" [(ngModel)]="searchKey" autocomplete="off"
+                                placeholder="Filter" (keyup)="filter()" />
+                            <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey"
+                                (click)="onSearchClear()">
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                  
+                      <div class="col-md-4 col-xl-4">
+                            <button matTooltip="Export to excel" mat-raised-button id="excelExport"
+                                (click)="exporter.exportTable('xlsx', {fileName:'partners'})"><i class="fa fa-2x fa-file-excel-o"
+                                    aria-hidden="true"></i>
+                                Export to excel
+                            </button>
+                        </div> 
+    
+    
+    
+                </div>
+    
+    
+                <div class="row">
+                    <table mat-table matTableExporter matSort [dataSource]="dataSource" class="mat-elevation-z8"
+                        #exporter="matTableExporter">
+
+                        <!-- modelId Column -->
+                        <ng-container matColumnDef="date">
+                            <th mat-header-cell *matHeaderCellDef> date </th>
+                            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                            <td mat-footer-cell *matFooterCellDef>
+                        
+                            </td>
+                        
+                        </ng-container>
+    
+                        <!-- modelId Column -->
+                        <ng-container matColumnDef="captureCardCount">
+                            <th mat-header-cell *matHeaderCellDef>captureCardCount </th>
+                            <td mat-cell *matCellDef="let element"> {{element.captureCardCount}} </td>
+                            <td mat-footer-cell *matFooterCellDef>
+    
+                            </td>
+    
+                        </ng-container>
+    
+    
+                        <!-- modelId Column -->
+                        <ng-container matColumnDef="interrogationCount">
+                            <th mat-header-cell *matHeaderCellDef> interrogationCount </th>
+                            <td mat-cell *matCellDef="let element"> {{element.interrogationCount}} </td>
+                            <td mat-footer-cell *matFooterCellDef>
+    
+                            </td>
+    
+                        </ng-container>
+    
+                        <!-- modelId Column -->
+                        <ng-container matColumnDef="retraitCount">
+                            <th mat-header-cell *matHeaderCellDef> retraitCount </th>
+                            <td mat-cell *matCellDef="let element"> {{element.retraitCount}} </td>
+                            <td mat-footer-cell *matFooterCellDef>
+    
+                            </td>
+    
+                        </ng-container>
+
+                        <!-- modelId Column -->
+                        <ng-container matColumnDef="retraitMontant">
+                            <th mat-header-cell *matHeaderCellDef> retraitMontant </th>
+                            <td mat-cell *matCellDef="let element"> {{element.retraitMontant}} </td>
+                            <td mat-footer-cell *matFooterCellDef>
+                        
+                            </td>
+                        
+                        </ng-container>
+
+                        <!-- modelId Column -->
+                        <ng-container matColumnDef="totalOperationCount">
+                            <th mat-header-cell *matHeaderCellDef> totalOperationCount </th>
+                            <td mat-cell *matCellDef="let element"> {{element.totalOperationCount}}</td>
+                            <td mat-footer-cell *matFooterCellDef>
+                        
+                            </td>
+                        
+                        </ng-container>
+    
+                        <!-- modelId Column -->
+                        <ng-container matColumnDef="transrejetCount">
+                            <th mat-header-cell *matHeaderCellDef> transrejetCount </th>
+                            <td mat-cell *matCellDef="let element"> {{element.transrejetCount}}</td>
+                            <td mat-footer-cell *matFooterCellDef>
+    
+                            </td>
+    
+                        </ng-container>
+
+                        <!-- modelId Column -->
+                        <ng-container matColumnDef="versementCount">
+                            <th mat-header-cell *matHeaderCellDef> versementCount </th>
+                            <td mat-cell *matCellDef="let element"> {{element.versementCount}}</td>
+                            <td mat-footer-cell *matFooterCellDef>
+                        
+                            </td>
+                        
+                        </ng-container>
+
+                        <!-- modelId Column -->
+                        <ng-container matColumnDef="versementMontant">
+                            <th mat-header-cell *matHeaderCellDef> versementMontant </th>
+                            <td mat-cell *matCellDef="let element"> {{element.versementMontant}}</td>
+                            <td mat-footer-cell *matFooterCellDef>
+                        
+                            </td>
+                        
+                        </ng-container>
+    
+        
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    <mat-paginator [hidden]="this.processing" [length]="250" [pageSize]="5"
+                        [pageSizeOptions]="[10, 20, 35, 50]" showFirstLastButton>
+                    </mat-paginator>
+    
+    
+                </div>
+    
+            </mat-card>
+       
+    </div>
+    <!-- REPORT TABLE END -->
+
+
+
+
    <!-- REPORT SECTION -->
     <div class="row mt-4 report">
         
@@ -184,7 +336,9 @@
         </div>
         <div class="paper mt-5 mb-5">
             <div class="holes"></div>
-            <textarea placeholder="Waiting for your report..."></textarea>
+            <textarea placeholder="Waiting for your report...">
+              Partner:
+            </textarea>
         </div>
 
         
