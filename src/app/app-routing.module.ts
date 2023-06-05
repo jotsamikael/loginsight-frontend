@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExtractionComponent } from './extraction/extraction.component';
 import { H22ReportComponent } from './h22-report/h22-report.component';
+import { LayoutComponent } from './layout/layout.component';
+import { LoginComponent } from './login/login.component';
 import { PartnerComponent } from './partner/partner.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -14,62 +16,24 @@ import { TerminalComponent } from './terminal/terminal.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
+
   {
-    path: '',
-    component: ExtractionComponent,
- 
-  },
-  {
-    path: 'partner',
-    component: PartnerComponent,
+    path: 'login',
+    component: LoginComponent,
 
   },
-  {
-    path: 'h22-report',
-    component: H22ReportComponent,
 
-  },
   {
-    path: 'dashboard',
-    component: DashboardComponent,
-
-  },
-  {
-    path: 'extraction',
-    component: ExtractionComponent,
-
-  },
-  {
-    path: 'terminal',
-    component: TerminalComponent,
-
-  },
-  {
-    path: 'terminal-model',
-    component: TerminalModelComponent,
-
-  },
-  {
-    path: 'terminal-type',
-    component: TerminalTypeComponent,
-
-  },
-  {
-    path: 'terminal-brand',
-    component: TerminalBrandComponent,
-
-  },
-  {
-    path: 'settings',
-    component: SettingsComponent,
-
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,
+    path: 'layout',
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./layout/layout.module').then(x => x.LayoutModule)
+      }]
 
   },
 ];

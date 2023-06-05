@@ -57,4 +57,8 @@ getKpiData(reportRequest: any){
   getTableSummary(reportRequest: any) {
     return this.http.post(`${API_URL}/operation-summary`, reportRequest)
   }
+
+  getClassifyOperationsByType() {
+    return this.http.get(`${API_URL}/classify-operations-by-type`)
+  }
 }

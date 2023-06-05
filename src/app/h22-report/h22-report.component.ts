@@ -252,9 +252,15 @@ export class H22ReportComponent implements OnInit {
     this.operationService.getReportData(reportRequest).subscribe(res => {
       this.reportDataObtained = res;
 
+      console.log("thththth")
+      console.log(this.reportDataObtained)
     
       this.processing = false;
      
+      //generate charts
+      this.chartService.createPieChart('raisonRejet', this.reportDataObtained.raisonRejet)
+      this.chartService.createPieChart('operationDistribution', this.reportDataObtained.operationDistribution) 
+
 
     })
 

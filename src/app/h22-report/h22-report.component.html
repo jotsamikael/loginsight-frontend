@@ -214,7 +214,7 @@
 
                         <!-- modelId Column -->
                         <ng-container matColumnDef="date">
-                            <th mat-header-cell *matHeaderCellDef> date </th>
+                            <th mat-header-cell *matHeaderCellDef> Date </th>
                             <td mat-cell *matCellDef="let element"> {{element.date}} </td>
                             <td mat-footer-cell *matFooterCellDef>
                         
@@ -224,7 +224,7 @@
     
                         <!-- modelId Column -->
                         <ng-container matColumnDef="captureCardCount">
-                            <th mat-header-cell *matHeaderCellDef>captureCardCount </th>
+                            <th mat-header-cell *matHeaderCellDef>Capture Card Count </th>
                             <td mat-cell *matCellDef="let element"> {{element.captureCardCount}} </td>
                             <td mat-footer-cell *matFooterCellDef>
     
@@ -235,7 +235,7 @@
     
                         <!-- modelId Column -->
                         <ng-container matColumnDef="interrogationCount">
-                            <th mat-header-cell *matHeaderCellDef> interrogationCount </th>
+                            <th mat-header-cell *matHeaderCellDef> Interrogation Count </th>
                             <td mat-cell *matCellDef="let element"> {{element.interrogationCount}} </td>
                             <td mat-footer-cell *matFooterCellDef>
     
@@ -245,7 +245,7 @@
     
                         <!-- modelId Column -->
                         <ng-container matColumnDef="retraitCount">
-                            <th mat-header-cell *matHeaderCellDef> retraitCount </th>
+                            <th mat-header-cell *matHeaderCellDef> Retrait Count </th>
                             <td mat-cell *matCellDef="let element"> {{element.retraitCount}} </td>
                             <td mat-footer-cell *matFooterCellDef>
     
@@ -255,7 +255,7 @@
 
                         <!-- modelId Column -->
                         <ng-container matColumnDef="retraitMontant">
-                            <th mat-header-cell *matHeaderCellDef> retraitMontant </th>
+                            <th mat-header-cell *matHeaderCellDef> Retrait Montant </th>
                             <td mat-cell *matCellDef="let element"> {{element.retraitMontant}} </td>
                             <td mat-footer-cell *matFooterCellDef>
                         
@@ -265,7 +265,7 @@
 
                         <!-- modelId Column -->
                         <ng-container matColumnDef="totalOperationCount">
-                            <th mat-header-cell *matHeaderCellDef> totalOperationCount </th>
+                            <th mat-header-cell *matHeaderCellDef> Total Operation Count </th>
                             <td mat-cell *matCellDef="let element"> {{element.totalOperationCount}}</td>
                             <td mat-footer-cell *matFooterCellDef>
                         
@@ -275,7 +275,7 @@
     
                         <!-- modelId Column -->
                         <ng-container matColumnDef="transrejetCount">
-                            <th mat-header-cell *matHeaderCellDef> transrejetCount </th>
+                            <th mat-header-cell *matHeaderCellDef> Operation Rejected Count </th>
                             <td mat-cell *matCellDef="let element"> {{element.transrejetCount}}</td>
                             <td mat-footer-cell *matFooterCellDef>
     
@@ -285,7 +285,7 @@
 
                         <!-- modelId Column -->
                         <ng-container matColumnDef="versementCount">
-                            <th mat-header-cell *matHeaderCellDef> versementCount </th>
+                            <th mat-header-cell *matHeaderCellDef> versement Count </th>
                             <td mat-cell *matCellDef="let element"> {{element.versementCount}}</td>
                             <td mat-footer-cell *matFooterCellDef>
                         
@@ -295,7 +295,7 @@
 
                         <!-- modelId Column -->
                         <ng-container matColumnDef="versementMontant">
-                            <th mat-header-cell *matHeaderCellDef> versementMontant </th>
+                            <th mat-header-cell *matHeaderCellDef> versement Montant </th>
                             <td mat-cell *matCellDef="let element"> {{element.versementMontant}}</td>
                             <td mat-footer-cell *matFooterCellDef>
                         
@@ -337,10 +337,31 @@
         <div class="paper mt-5 mb-5">
             <div class="holes"></div>
             <textarea placeholder="Waiting for your report...">
-              Partner:
+              Partner: Branch: Year: Month:
+              
+            
+              
             </textarea>
-        </div>
 
+            <div class="row">
+            <mat-card-header class="mb-3">Distribution of reject</mat-card-header>
+            <canvas class="responsive-canvas" id="raisonRejet">
+            
+            </canvas>
+            </div>
+
+            <div class="row">
+                <mat-card-header class="mb-3">Distribution of operation Distribution</mat-card-header>
+                <canvas class="responsive-canvas" id="operationDistribution">
+            
+                </canvas>
+            </div>
+               
+           
+            
+
+        </div>
+    
         
     </div>
 

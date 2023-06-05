@@ -1,0 +1,81 @@
+<section class="vh-100" style="background-color: #242942;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card p-5" style="border-radius: 5px;">
+                    <div class="row g-0 ">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block overlay">
+                                <!-- <img src="../../assets/images/woman-in-tech2-min.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" /> -->
+                        </div>
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+                                <form [formGroup]="form" (submit)="login()">
+
+                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                        <i class="fa fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                                        <span class="h1 fw-bold mb-0">Logo</span>
+                                    </div>
+
+                                    
+                                    <div class="row m-b-20">
+                                        <div class="col-md-12">
+                                            <h3 class="text-center txt-primary">Sign In</h3>
+                                            <div class="row justify-content-center mt-2">
+                                                <mat-progress-spinner *ngIf="processing"></mat-progress-spinner>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="email" id="form2Example17" name="email" formControlName="email" class="form-control form-control-lg" />
+                                        <label class="form-label" for="form2Example17">Email address</label>
+                                        <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger mt-1">
+                                        
+                                            <div *ngIf="f.email.errors.required">Email is required.</div>
+                                            
+                                            <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+                                            
+                                            <div *ngIf="f.email.errors.maxlength">Email should be less than 30 characters.</div>
+                                        
+                                        
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="form2Example27"
+                                            class="form-control form-control-lg"   name="password" formControlName="password"/>
+                                        <label class="form-label" for="form2Example27">Password</label>
+                                        <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger mt-1">
+                                        
+                                            <span *ngIf="f.password.errors.required">Password is required.</span>
+                                            
+                                            
+                                            <span *ngIf="f.password.errors.maxlength">Password should be less than 15 characters.</span>
+                                            
+                                            <span *ngIf="f.password.errors.pattern" class="text-center">Password should be atleast 6<br> characters and should
+                                                contain atleast one capital letter,<br> one small lowercase letter, one number and a special character
+                                                .</span>
+                                        
+                                        </div>
+                                       
+                                    </div>
+
+                                    <div class="d-grid pt-1 mb-4">
+                                        <button type="submit" mat-raised-button type="submit" [disabled]="!form.valid  || (processing)" class="btn btn-dark btn-lg btn-md  waves-effect text-center m-b-20" type="button">Login</button>
+                                    </div>
+
+                                    <a class="small text-muted" href="#!">Forgot password?</a>
+                                    &nbsp;
+                                    <a href="#!" class="small text-muted">Terms of use.</a>
+                                   
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

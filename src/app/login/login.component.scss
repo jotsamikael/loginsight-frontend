@@ -1,0 +1,22 @@
+/* .divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+} */
+
+section{
+    background-image: url("../../assets/images/bg-login.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlay{
+    overflow: hidden;
+    background: #0a2e50;  /* fallback for old browsers */
+    background: linear-gradient(rgb(#021f47,0.4), rgba(#0a2e50, 0.8)), url("../../assets/images/woman-in-tech2-min.png");  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(rgb(#021f47,0.4), rgb(#021f47,0.8)), url("../../assets/images/woman-in-tech2-min.png"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-repeat: no-repeat;
+}

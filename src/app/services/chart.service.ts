@@ -84,8 +84,56 @@ export class ChartService {
 
   }
 
+  /*********** Pie chart distribution of transactions */
+
+  public createPieChart(chartId, data) {
+
+
+    this.canvas = document.getElementById(chartId)
+    this.ctx = this.canvas.getContext('2d')
+
+    let chart = new Chart(this.ctx, {
+      type: 'pie',
+      data: {
+        labels: Object.keys(data),//Object.keys allows me to extract only text/key values
+
+        datasets: [{
+          label: 'Operation Types',
+          data: Object.values(data),//Object.values allows me to extract only numerical values
+          backgroundColor: Object.values(data).map(this.getRandomColor), //use the function to generate random colors,
+          borderColor: "#cecece",
+          fill: false,
+          borderWidth: 1,
+
+        }]
+
+      },
+      options: {
+        title: {
+          display: true,
+          text: '',
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: true
+        },
+        hover: {
+          mode: 'nearest',
+          intersect: true
+        }
+      }
+
+
+
+    })
+
+
+  }
+
+
+
 /*********************************** CREATE BAR CHART***********************************/
-  public createBarChart(chartId, data) {
+  public createBarChart(chartId, data, labels, stepSize) {
     this.canvas = document.getElementById(chartId)
     this.ctx = this.canvas.getContext('2d')
 
@@ -94,7 +142,7 @@ export class ChartService {
     let chart = new Chart(this.ctx, {
       type: 'bar',
       data: {
-        labels: data,
+        labels: labels,
 
         datasets: [{
           label: '',
@@ -136,7 +184,7 @@ export class ChartService {
               beginAtZero: true,
               min: 0,
 
-              stepSize: 200
+              stepSize: stepSize
             }
           }]
         }

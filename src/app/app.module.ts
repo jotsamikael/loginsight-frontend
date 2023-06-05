@@ -75,8 +75,11 @@ import { RouterModule } from '@angular/router';
 import { SidebarDashboardComponent } from './sidebar-dashboard/sidebar-dashboard.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatTableExporterModule } from 'mat-table-exporter';
-import { SettingsComponent } from './settings/settings.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
+import { SettingsComponent } from './settings/settings.component';
+import { LayoutComponent } from './layout/layout.component';
+
 
 @NgModule({
   declarations: [
@@ -85,7 +88,10 @@ import { ProfileComponent } from './profile/profile.component';
     H22ReportComponent,
     DashboardComponent,
     ProfileComponent,
-    SettingsComponent
+    SettingsComponent,
+    LayoutComponent,
+    LoginComponent
+    
     
   ],
   imports: [

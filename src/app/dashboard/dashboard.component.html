@@ -1,6 +1,6 @@
 <div class="main-content">
     <mat-card>
-     <mat-card-header class="mb-3">Indicateur</mat-card-header>
+     <mat-card-header class="mb-3">Indicators</mat-card-header>
    
     <div class="container-fluid mb-5">
 
@@ -8,7 +8,7 @@
             <div class="col-md-3 col-sm-3">
                 <mat-card>
                     <mat-card-title-group>
-                        <mat-card-title>1523M
+                        <mat-card-title>14254
                         </mat-card-title>
                         <mat-card-subtitle>Operations</mat-card-subtitle>
                         <i class="fa fa-line-chart fa-3x" aria-hidden="true"></i>
@@ -25,9 +25,9 @@
             <div class="col-md-3 col-sm-3">
                 <mat-card>
                     <mat-card-title-group>
-                        <mat-card-title>14%</mat-card-title>
-                        <mat-card-subtitle>Taux de rejet</mat-card-subtitle>
-                        <i class="fa fa-reply-all fa-3x" aria-hidden="true"></i>
+                        <mat-card-title>14</mat-card-title>
+                        <mat-card-subtitle>Partners</mat-card-subtitle>
+                        <i class="fa fa-university fa-3x" aria-hidden="true"></i>
                     </mat-card-title-group>
 
                     <mat-card-content>
@@ -38,6 +38,25 @@
                     </mat-card-footer>
                 </mat-card>
             </div>
+
+            <div class="col-md-3 col-sm-3">
+                <mat-card>
+                    <mat-card-title-group>
+                        <mat-card-title>33
+                        </mat-card-title>
+                        <mat-card-subtitle>Point of presence</mat-card-subtitle>
+                        <i class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
+                    </mat-card-title-group>
+            
+                    <mat-card-content>
+            
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+
 
             <div class="col-md-3 col-sm-3">
                 <mat-card>
@@ -56,24 +75,7 @@
                 </mat-card>
             </div>
 
-            <div class="col-md-3 col-sm-3">
-                <mat-card>
-                    <mat-card-title-group>
-                        <mat-card-title>33k
-                        </mat-card-title>
-                        <mat-card-subtitle>Montant de versement</mat-card-subtitle>
-                        <i class="fa fa-area-chart fa-3x" aria-hidden="true"></i>
-                    </mat-card-title-group>
-
-                    <mat-card-content>
-
-                    </mat-card-content>
-                    <mat-card-footer>
-                        <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
-                    </mat-card-footer>
-                </mat-card>
-            </div>
-
+            
 
         </div>
 
@@ -108,7 +110,7 @@
                     </mat-card-title-group>
         
                     <mat-card-content>
-                        <mat-card-title>1523M
+                        <mat-card-title class="mt-4">{{this.TotalNumberOfOperations}}
                         </mat-card-title>
                         <mat-card-subtitle>Operations</mat-card-subtitle>
                     </mat-card-content>
