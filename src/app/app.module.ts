@@ -79,6 +79,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LayoutComponent } from './layout/layout.component';
+import { AccountDeactivatedComponent } from './account-deactivated/account-deactivated.component';
+import { FirstUsageComponent } from './first-usage/first-usage.component';
 
 
 @NgModule({
@@ -90,7 +92,9 @@ import { LayoutComponent } from './layout/layout.component';
     ProfileComponent,
     SettingsComponent,
     LayoutComponent,
-    LoginComponent
+    LoginComponent,
+    AccountDeactivatedComponent,
+    FirstUsageComponent
     
     
   ],

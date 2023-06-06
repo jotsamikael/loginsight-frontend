@@ -38,9 +38,10 @@ export class LoginComponent implements OnInit {
 
     email: new FormControl('', [Validators.required, Validators.email, , Validators.maxLength(30)]),
 
-    password: new FormControl('', [Validators.required,  Validators.minLength(6), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*?[\d])(?=.*?[\W]).{6,15}$/),Validators.maxLength(15)]),
+   // password: new FormControl('', [Validators.required,  Validators.minLength(6), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*?[\d])(?=.*?[\W]).{6,15}$/),Validators.maxLength(15)]),
 
-    
+    password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]),
+
 
 
 
@@ -76,19 +77,22 @@ export class LoginComponent implements OnInit {
 
 
   login() {
+    console.log("touched1")
     
     this.processing = true;
     this.disableForm()
     const credentials = {
       email: this.form.get('email').value,
 
-      password: this.form.get('password').value,
+      passwordUser: this.form.get('password').value,
     
     }
+    console.log(credentials)
 
     this.authentication.login(credentials).subscribe(data => {
       this.currentUser = data;
       console.log("role " + this.currentUser.role)
+      console.log(this.currentUser)
       if (this.currentUser.activated === false) {
 
         this.router.navigate(['/account-deactivated'])
@@ -101,14 +105,14 @@ export class LoginComponent implements OnInit {
 
           if (this.currentUser.role === Role.SYSTEM_MANAGER) {
 
-            this.router.navigate(['/settings-management'])
+            this.router.navigate(['/layout/dashboard'])
 
           } else if (this.currentUser.role === Role.ADMIN) {
 
-            this.router.navigate(['/admin-dashboard'])
+            this.router.navigate(['/layout/dashboard'])
 
           } else if (this.currentUser.role === Role.OPERATOR) {
-            this.router.navigate(['/dashboard'])
+            this.router.navigate(['/layout/extraction'])
           }
           else {
             this.router.navigate(['/404'])

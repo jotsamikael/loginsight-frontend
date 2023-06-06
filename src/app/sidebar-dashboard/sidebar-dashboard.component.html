@@ -21,14 +21,27 @@
         </button>
         <div class="collapse navbar-collapse" id="topNavBar">
             <form class="d-flex ms-auto my-3 my-lg-0">
-                <div class="input-group">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+                <div class="input-group" class="text-white">
+                   <!--  <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
                     <button class="btn btn-primary" type="submit">
                         <i class="fa fa-search"></i>
-                    </button>
+                    </button> -->
+                    {{this.loggedInUser.email}}
                 </div>
             </form>
             <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                
+                    <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user-circle"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item btn" routerLink="/layout/profile">Profile</a></li>
+                        <li>
+                            <a class="dropdown-item btn" (click)="logout()"> <i class="fa fa-sign-out"></i>Logout</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="d-flex ms-auto my-3 my-lg-0">
                     <!-- <select style="background-image: url(../../../assets/images/translate.jpg); background-size: 15px;"
                         class="custom-select" (change)="changeLang($event.target.value)">
@@ -45,18 +58,7 @@
                         <option class="lang" valaue="FR">FR</option>
                     </select>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <i class="fa fa-user-circle"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item btn" routerLink="/layout/profile">Profile</a></li>
-                        <li>
-                            <a class="dropdown-item btn" (click)="logout()" > <i class="fa fa-sign-out"></i>Logout</a>
-                        </li>
-                    </ul>
-                </li>
+              
             </ul>
         </div>
     </div>

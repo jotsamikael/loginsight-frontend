@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { AuthenticationService } from '../services/ms_security/authentication.service';
 
 @Component({
   selector: 'app-sidebar-dashboard',
@@ -8,21 +9,24 @@ import Swal from 'sweetalert2';
 })
 export class SidebarDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authenticationService: AuthenticationService) { }
+  loggedInUser;
 
   ngOnInit(): void {
+    this.loggedInUser = this.authenticationService.currentUserValue; 
+    console.log(this.loggedInUser)
   }
 
-  logout(){
+  logout(){ 
     console.log("grety")
 
    Swal.fire({
-     title: 'Deconnexion',
-     text: 'Etes vous sure de vouloir vous deconnecter?',
+     title: 'Logout',
+     text: 'Are you sure you want to logout?',
      icon: 'question',
-     confirmButtonText: 'Oui',
+     confirmButtonText: 'Yes',
      showDenyButton: true,
-     denyButtonText: `Annuler`, 
+     denyButtonText: `Cancel`, 
      
 
    })

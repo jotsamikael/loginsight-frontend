@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 
-const API_URL = `${environment.BASE_URL_MS_SECURITY}/api/v1/`
+const API_URL = `${environment.BASE_URL_MS_SECURITY}/api/v1/authentication/`
 
 @Injectable({
   providedIn: 'root'
